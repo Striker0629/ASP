@@ -12,6 +12,7 @@ namespace WebApplication1.Controllers
         public ActionResult List()
         {
             ViewBag.Message = "THIS IS LIST";
+            ViewData.Model = new Models.ListModel();
             return View();
         }
     }
