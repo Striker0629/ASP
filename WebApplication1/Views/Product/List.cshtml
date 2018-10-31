@@ -1,12 +1,13 @@
-﻿
-@{
+﻿@{
 ViewBag.Title = "List";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
-@foreach(var item in Model.Products)
+@foreach (var item in ViewBag.Products)
 {
-    <li><a href="~/Views/Product/Product.cshtml">@item.Name</a></li>
+    <li>
+        @item.Name @Html.ActionLink("Details", "Product", new { id = item.Id })
+    </li>
 }
 <p>Use this area to provide additional information.</p>
 

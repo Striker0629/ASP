@@ -15,9 +15,9 @@ namespace WebApplication1.Models
             products = new List<Product>();
             products.AddRange(new Product[]
             {
-                new Product{Name="HyperX Alloy FPS",Cash=2700},
-                new Product{Name="Razer Mamba Flux",Cash=4500},
-                new Product{Name="HyperX Pulsefire Core",Cash=1200}
+                new Product{Name="HyperX Alloy FPS",Cash=2700,Id=0},
+                new Product{Name="Razer Mamba Flux",Cash=4500,Id=1},
+                new Product{Name="HyperX Pulsefire Core",Cash=1200,Id=2}
             });
         }
     }

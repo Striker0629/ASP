@@ -11,9 +11,13 @@ namespace WebApplication1.Controllers
         // GET: Product
         public ActionResult List()
         {
-            ViewBag.Message = "THIS IS LIST";
-            ViewData.Model = new Models.ListModel();
+            //ViewBag.Message = "THIS IS LIST";
+            ViewBag.Products = new Models.ListModel().Products;
             return View();
+        }
+        public ActionResult Product(Int32 id)
+        {
+            return View(new Models.ListModel().Products[id]);
         }
     }
 }
