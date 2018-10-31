@@ -1,38 +1,4 @@
-﻿@*@model IEnumerable<WebApplication1.RouteConfig>
-
-    @{
-        Layout = null;
-    }
-
-    <!DOCTYPE html>
-
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>List</title>
-    </head>
-    <body>
-        <p>*@
-@*@Html.ActionLink("Create New", "Create")
-        </p>
-        <table class="table">
-            <tr>
-                <th></th>
-            </tr>
-
-        @foreach (var item in Model) {
-            <tr>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>
-            </tr>
-        }
-
-        </table>
-    </body>
-    </html>*@
+﻿
 @{
 ViewBag.Title = "List";
 }
@@ -40,7 +6,7 @@ ViewBag.Title = "List";
 <h3>@ViewBag.Message</h3>
 @foreach(var item in Model.Products)
 {
-    <li>@item.Name</li>
+    <li><a href="~/Views/Product/Product.cshtml">@item.Name</a></li>
 }
 <p>Use this area to provide additional information.</p>
 
