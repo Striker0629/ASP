@@ -9,6 +9,11 @@ namespace WebApplication1.Controllers
     public class ProductController : Controller
     {
         // GET: Product
+        static Models.ListModel Models;
+        static ProductController()
+        {
+            Models = new WebApplication1.Models.ListModel();
+        }
         public ActionResult List()
         {
             //ViewBag.Message = "THIS IS LIST";
@@ -17,7 +22,19 @@ namespace WebApplication1.Controllers
         }
         public ActionResult Product(Int32 id)
         {
-            return View(new Models.ListModel().Products[id]);
+            
+            Models.Product find;
+            try
+            {
+                find = Models.Products.Find(p => p.Id == id);
+                return View(new Models.ListModel().Products.Find(p => p.Id == id));
+            }
+            catch (ArgumentNullException)
+            {
+                return View();
+            }
+            
+            //return View(new Models.ListModel().Products.Find( p => p.Id==id));
         }
     }
 }
