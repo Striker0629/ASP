@@ -9,6 +9,7 @@ namespace WebApplication1.Controllers
     public class ProductController : Controller
     {
         // GET: Product
+        static DataBase.LibraryContext context = new DataBase.LibraryContext();
         static Models.ListModel Models;
         static ProductController()
         {
@@ -22,11 +23,12 @@ namespace WebApplication1.Controllers
         }
         public ActionResult Product(Int32 id)
         {
-            
             Models.Product find;
             try
             {
+                
                 find = Models.Products.Find(p => p.Id == id);
+               
                 return View(new Models.ListModel().Products.Find(p => p.Id == id));
             }
             catch (ArgumentNullException)
