@@ -15,7 +15,7 @@ namespace WebApplication1.Models
         public String Name { get; set; }
         public Single Cash { get; set; }
         public Int32 CategoryID { get; set; }
-        [ForeignKey("Category")]
+        [ForeignKey("CategoryID")]
         public virtual Category Category { get; set; }
     }
 }

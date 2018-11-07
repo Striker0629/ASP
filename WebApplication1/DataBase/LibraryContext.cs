@@ -9,10 +9,11 @@ namespace WebApplication1.DataBase
     {
         public LibraryContext() : base("ServerDB")
         {
-
+            Database.SetInitializer<LibraryContext>
+                (new CreateDatabaseIfNotExists<LibraryContext>());
         }
-        public List<Models.Product>Products {get;set;}
-        public List<Models.Category>Category { get; set; }
-        public List<Models.Sells> Sells { get; set; }
+        public DbSet<Models.Product>Products {get;set;}
+        public DbSet<Models.Category>Category { get; set; }
+        public DbSet<Models.Sells> Sells { get; set; }
     }
 }
