@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
+using WebApplication1.Models;
 namespace WebApplication1.DataBase
 {
     public class DataContext:DbContext
     {
-        public DataContext():base("ServerDB")
+        public DataContext():base("Store")
         {
-            
+            Database.SetInitializer<DataContext>
+                (new CreateDatabaseIfNotExists<DataContext>());
         }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        
     }
 }
